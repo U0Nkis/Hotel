@@ -23,16 +23,29 @@ public class Invoice {
         return sum;
     }
 
+    // Getters and setters
     public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public Booking getBooking() {
         return booking;
     }
 
+    public void setBooking(Booking booking) {
+        this.booking = booking;
+    }
+
     public List<Service> getServices() {
         return services;
+    }
+
+    public void setServices(List<Service> services) {
+        this.services = services;
     }
 
     public double getTotalAmount() {
@@ -41,11 +54,6 @@ public class Invoice {
 
     @Override
     public String toString() {
-        return "Invoice{" +
-                "id=" + id +
-                ", booking=" + booking +
-                ", services=" + services +
-                ", totalAmount=" + totalAmount +
-                '}';
+        return "Invoice{id=" + id + ", booking=" + booking + ", totalAmount=" + totalAmount + "}";
     }
 }

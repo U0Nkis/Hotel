@@ -11,7 +11,7 @@ public class RoomRepository {
 
     public Room save(Room room) {
         if (room.getId() == 0) {
-            room = new Room(nextId++, room.getRoomNumber(), room.getType(), room.getPricePerNight(), room.isAvailable());
+            room.setId(nextId++);
         }
         roomStorage.put(room.getId(), room);
         return room;

@@ -11,7 +11,7 @@ public class BookingRepository {
 
     public Booking save(Booking booking) {
         if (booking.getId() == 0) {
-            booking = new Booking(nextId++, booking.getGuest(), booking.getRoom(), booking.getStartDate(), booking.getEndDate());
+            booking.setId(nextId++);
         }
         bookingStorage.put(booking.getId(), booking);
         return booking;

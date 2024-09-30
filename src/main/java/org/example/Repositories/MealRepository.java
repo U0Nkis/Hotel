@@ -11,7 +11,7 @@ public class MealRepository {
 
     public Meal save(Meal meal) {
         if (meal.getId() == 0) {
-            meal = new Meal(nextId++, meal.getMealType(), meal.getPrice());
+            meal.setId(nextId++);
         }
         mealStorage.put(meal.getId(), meal);
         return meal;

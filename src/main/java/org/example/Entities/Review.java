@@ -13,29 +13,41 @@ public class Review {
         this.rating = rating;
     }
 
+    // Getters and setters
     public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public Guest getGuest() {
         return guest;
     }
 
+    public void setGuest(Guest guest) {
+        this.guest = guest;
+    }
+
     public String getComment() {
         return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
     }
 
     public int getRating() {
         return rating;
     }
 
+    public void setRating(int rating) {
+        this.rating = rating;
+    }
+
     @Override
     public String toString() {
-        return "Review{" +
-                "id=" + id +
-                ", guest=" + guest +
-                ", comment='" + comment + '\'' +
-                ", rating=" + rating +
-                '}';
+        return "Review{id=" + id + ", guest=" + guest + ", comment='" + comment + "', rating=" + rating + "}";
     }
 }

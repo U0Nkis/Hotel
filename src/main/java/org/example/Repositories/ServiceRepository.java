@@ -11,7 +11,7 @@ public class ServiceRepository {
 
     public Service save(Service service) {
         if (service.getId() == 0) {
-            service = new Service(nextId++, service.getName(), service.getPrice());
+            service.setId(nextId++);
         }
         serviceStorage.put(service.getId(), service);
         return service;

@@ -13,29 +13,41 @@ public class Payment {
         this.isPaid = isPaid;
     }
 
+    // Getters and setters
     public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public Invoice getInvoice() {
         return invoice;
     }
 
+    public void setInvoice(Invoice invoice) {
+        this.invoice = invoice;
+    }
+
     public String getPaymentMethod() {
         return paymentMethod;
+    }
+
+    public void setPaymentMethod(String paymentMethod) {
+        this.paymentMethod = paymentMethod;
     }
 
     public boolean isPaid() {
         return isPaid;
     }
 
+    public void setPaid(boolean isPaid) {
+        this.isPaid = isPaid;
+    }
+
     @Override
     public String toString() {
-        return "Payment{" +
-                "id=" + id +
-                ", invoice=" + invoice +
-                ", paymentMethod='" + paymentMethod + '\'' +
-                ", isPaid=" + isPaid +
-                '}';
+        return "Payment{id=" + id + ", invoice=" + invoice + ", paymentMethod='" + paymentMethod + "', isPaid=" + isPaid + "}";
     }
 }

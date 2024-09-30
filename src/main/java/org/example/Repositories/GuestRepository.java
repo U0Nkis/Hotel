@@ -12,7 +12,7 @@ public class GuestRepository {
     // Создание или обновление гостя
     public Guest save(Guest guest) {
         if (guest.getId() == 0) {
-            guest = new Guest(nextId++, guest.getFullName(), guest.getAddress(), guest.getPhoneNumber());
+            guest.setId(nextId++);
         }
         guestStorage.put(guest.getId(), guest);
         return guest;

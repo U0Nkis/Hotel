@@ -11,24 +11,33 @@ public class Meal {
         this.price = price;
     }
 
+    // Getters and setters
     public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getMealType() {
         return mealType;
     }
 
+    public void setMealType(String mealType) {
+        this.mealType = mealType;
+    }
+
     public double getPrice() {
         return price;
     }
 
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
     @Override
     public String toString() {
-        return "Meal{" +
-                "id=" + id +
-                ", mealType='" + mealType + '\'' +
-                ", price=" + price +
-                '}';
+        return "Meal{id=" + id + ", mealType='" + mealType + "', price=" + price + "}";
     }
 }
