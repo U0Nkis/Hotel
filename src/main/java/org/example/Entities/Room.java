@@ -15,7 +15,6 @@ public class Room {
         this.isAvailable = isAvailable;
     }
 
-    // Getters and setters
     public int getId() {
         return id;
     }

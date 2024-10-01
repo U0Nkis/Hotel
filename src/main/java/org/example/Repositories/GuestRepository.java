@@ -9,7 +9,6 @@ public class GuestRepository {
     private final Map<Integer, Guest> guestStorage = new HashMap<>();
     private int nextId = 1;
 
-    // Создание или обновление гостя
     public Guest save(Guest guest) {
         if (guest.getId() == 0) {
             guest.setId(nextId++);
@@ -18,17 +17,14 @@ public class GuestRepository {
         return guest;
     }
 
-    // Поиск по ID
     public Guest findById(int id) {
         return guestStorage.get(id);
     }
 
-    // Получить всех гостей
     public Map<Integer, Guest> findAll() {
         return guestStorage;
     }
 
-    // Удаление по ID
     public void deleteById(int id) {
         guestStorage.remove(id);
     }

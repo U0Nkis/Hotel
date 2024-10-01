@@ -15,7 +15,6 @@ public class Booking {
         this.endDate = endDate;
     }
 
-    // Getters and setters
     public int getId() {
         return id;
     }

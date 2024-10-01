@@ -13,7 +13,6 @@ public class Payment {
         this.isPaid = isPaid;
     }
 
-    // Getters and setters
     public int getId() {
         return id;
     }

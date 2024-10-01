@@ -13,7 +13,6 @@ public class Guest {
         this.phoneNumber = phoneNumber;
     }
 
-    // Getters and setters
     public int getId() {
         return id;
     }

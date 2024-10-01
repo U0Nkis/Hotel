@@ -23,7 +23,6 @@ public class Invoice {
         return sum;
     }
 
-    // Getters and setters
     public int getId() {
         return id;
     }
