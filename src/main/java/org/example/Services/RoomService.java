@@ -1,6 +1,6 @@
 package org.example.Services;
 
-import org.example.Entities.Room;
+import org.example.Models.Room;
 import org.example.Repositories.api.Repository;
 
 import java.util.List;
@@ -13,8 +13,8 @@ public class RoomService {
         this.roomRepository = roomRepository;
     }
 
-    public void addRoom(Room room) {
-        roomRepository.save(room);
+    public Room addRoom(Room room) {
+        return roomRepository.save(room);
     }
 
     public Optional<Room> findRoomById(Long id) {

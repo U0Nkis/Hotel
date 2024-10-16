@@ -1,6 +1,6 @@
 package org.example.Controllers;
 
-import org.example.Entities.Guest;
+import org.example.Models.Guest;
 import org.example.Services.GuestService;
 
 import java.util.Scanner;
@@ -18,9 +18,9 @@ public class GuestController {
     public void createGuest() {
         System.out.print("Введите имя гостя: ");
         String guestName = scanner.next();
-        Guest newGuest = new Guest(1L, guestName);
-        guestService.addGuest(newGuest);
-        System.out.println("Гость создан: " + newGuest);
+        Guest newGuest = new Guest(null, guestName);
+        Guest savedGuest = guestService.addGuest(newGuest);
+        System.out.println("Гость создан: " + savedGuest);
     }
 
     // Read (find all guests)

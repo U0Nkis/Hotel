@@ -1,6 +1,6 @@
 package org.example.Services;
 
-import org.example.Entities.Guest;
+import org.example.Models.Guest;
 import org.example.Repositories.api.Repository;
 
 import java.util.List;
@@ -13,8 +13,8 @@ public class GuestService {
         this.guestRepository = guestRepository;
     }
 
-    public void addGuest(Guest guest) {
-        guestRepository.save(guest);
+    public Guest addGuest(Guest guest) {
+        return guestRepository.save(guest);
     }
 
     public Optional<Guest> findGuestById(Long id) {

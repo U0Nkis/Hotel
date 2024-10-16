@@ -1,6 +1,6 @@
 package org.example.Services;
 
-import org.example.Entities.Reservation;
+import org.example.Models.Reservation;
 import org.example.Repositories.api.Repository;
 
 import java.util.List;
@@ -13,8 +13,8 @@ public class ReservationService {
         this.reservationRepository = reservationRepository;
     }
 
-    public void addReservation(Reservation reservation) {
-        reservationRepository.save(reservation);
+    public Reservation addReservation(Reservation reservation) {
+        return reservationRepository.save(reservation);
     }
 
     public Optional<Reservation> findReservationById(Long id) {

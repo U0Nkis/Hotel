@@ -1,6 +1,6 @@
 package org.example.Repositories.impl;
 
-import org.example.Entities.Room;
+import org.example.Models.Room;
 import org.example.Repositories.api.Repository;
 
 import java.util.*;
@@ -10,9 +10,12 @@ public class RoomRepositoryImpl implements Repository<Room> {
     private Long idCounter = 0L;
 
     @Override
-    public void save(Room entity) {
-        entity = new Room(++idCounter, entity.getRoomNumber());
+    public Room save(Room entity) {
+        if (entity.getId() == null) {
+            entity = new Room(++idCounter, entity.getRoomNumber());
+        }
         roomMap.put(entity.getId(), entity);
+        return entity;
     }
 
     @Override

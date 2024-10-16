@@ -1,6 +1,6 @@
 package org.example.Repositories.impl;
 
-import org.example.Entities.Guest;
+import org.example.Models.Guest;
 import org.example.Repositories.api.Repository;
 
 import java.util.*;
@@ -11,9 +11,12 @@ public class GuestRepositoryImpl implements Repository<Guest> {
     private Long idCounter = 0L;
 
     @Override
-    public void save(Guest entity) {
-        entity = new Guest(++idCounter, entity.getName());
+    public Guest save(Guest entity) {
+        if (entity.getId() == null) {
+            entity = new Guest(++idCounter, entity.getName());
+        }
         guestMap.put(entity.getId(), entity);
+        return entity;
     }
 
     @Override

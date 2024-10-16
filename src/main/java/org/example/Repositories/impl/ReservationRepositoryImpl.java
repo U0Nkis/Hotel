@@ -1,6 +1,6 @@
 package org.example.Repositories.impl;
 
-import org.example.Entities.Reservation;
+import org.example.Models.Reservation;
 import org.example.Repositories.api.Repository;
 
 import java.util.*;
@@ -10,9 +10,12 @@ public class ReservationRepositoryImpl implements Repository<Reservation> {
     private Long idCounter = 0L;
 
     @Override
-    public void save(Reservation entity) {
-        entity = new Reservation(++idCounter, entity.getGuest(), entity.getRooms());
+    public Reservation save(Reservation entity) {
+        if (entity.getId() == null) {
+            entity = new Reservation(++idCounter, entity.getGuest(), entity.getRooms());
+        }
         reservationMap.put(entity.getId(), entity);
+        return entity;
     }
 
     @Override

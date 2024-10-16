@@ -1,6 +1,6 @@
 package org.example.Controllers;
 
-import org.example.Entities.Reservation;
+import org.example.Models.Reservation;
 import org.example.Services.GuestService;
 import org.example.Services.ReservationService;
 import org.example.Services.RoomService;
@@ -21,7 +21,7 @@ public class ReservationController {
         this.scanner = scanner;
     }
 
-    // Create
+    // Create (создание брони с автогенерацией ID в репозитории)
     public void createReservation() {
         System.out.print("Введите ID гостя для брони: ");
         Long guestId = scanner.nextLong();
@@ -43,11 +43,12 @@ public class ReservationController {
             return;
         }
 
-        Reservation newReservation = new Reservation(1L, guest.get(), rooms);
-        reservationService.addReservation(newReservation);
+        // Создаем бронь с null ID — репозиторий сам сгенерирует ID
+        Reservation newReservation = new Reservation(null, guest.get(), rooms);
+        Reservation savedReservation = reservationService.addReservation(newReservation);
 
-        var savedReservation = reservationService.findReservationById(newReservation.getId());
-        savedReservation.ifPresent(res -> System.out.println("Бронь создана: " + res));
+        // Выводим созданную бронь с ID
+        System.out.println("Бронь создана: " + savedReservation);
     }
 
     // Получение всех броней

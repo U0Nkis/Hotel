@@ -1,6 +1,6 @@
 package org.example.Controllers;
 
-import org.example.Entities.Room;
+import org.example.Models.Room;
 import org.example.Services.RoomService;
 
 import java.util.Scanner;
@@ -18,9 +18,9 @@ public class RoomController {
     public void createRoom() {
         System.out.print("Введите номер комнаты: ");
         String roomNumber = scanner.next();
-        Room newRoom = new Room(1L, roomNumber);
-        roomService.addRoom(newRoom);
-        System.out.println("Комната создана: " + newRoom);
+        Room newRoom = new Room(null, roomNumber);
+        Room savedRoom = roomService.addRoom(newRoom);
+        System.out.println("Комната создана: " + savedRoom);
     }
 
     // Read (find all rooms)

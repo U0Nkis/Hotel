@@ -1,4 +1,4 @@
-package org.example.Entities;
+package org.example.Models;
 
 public class Room {
     private Long id;
