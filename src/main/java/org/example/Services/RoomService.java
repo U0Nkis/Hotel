@@ -2,14 +2,15 @@ package org.example.Services;
 
 import org.example.Models.Room;
 import org.example.Repositories.api.Repository;
+import org.example.Repositories.api.RoomRepositoryApi;
 
 import java.util.List;
 import java.util.Optional;
 
 public class RoomService {
-    private Repository<Room> roomRepository;
+    private RoomRepositoryApi roomRepository;
 
-    public RoomService(Repository<Room> roomRepository) {
+    public RoomService(RoomRepositoryApi roomRepository) {
         this.roomRepository = roomRepository;
     }
 

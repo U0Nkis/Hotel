@@ -17,6 +17,14 @@ public class Room {
         return roomNumber;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setRoomNumber(String roomNumber) {
+        this.roomNumber = roomNumber;
+    }
+
     @Override
     public String toString() {
         return "Room{" +

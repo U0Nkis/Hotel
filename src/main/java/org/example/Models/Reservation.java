@@ -25,6 +25,18 @@ public class Reservation {
         return rooms;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setGuest(Guest guest) {
+        this.guest = guest;
+    }
+
+    public void setRooms(List<Room> rooms) {
+        this.rooms = rooms;
+    }
+
     @Override
     public String toString() {
         return "Reservation{" +
