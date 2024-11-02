@@ -1,34 +1,32 @@
 package org.example;
 
+import org.example.Config.DatabaseConfig;
 import org.example.Controllers.GuestController;
-import org.example.Controllers.ReservationController;
 import org.example.Controllers.RoomController;
+import org.example.Controllers.ReservationController;
 import org.example.Repositories.impl.GuestRepositoryImpl;
-import org.example.Repositories.impl.ReservationRepositoryImpl;
 import org.example.Repositories.impl.RoomRepositoryImpl;
+import org.example.Repositories.impl.ReservationRepositoryImpl;
 import org.example.Services.GuestService;
-import org.example.Services.ReservationService;
 import org.example.Services.RoomService;
+import org.example.Services.ReservationService;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Scanner;
 
 public class HotelApplication {
     public static void main(String[] args) {
-        Connection connection = null;
-        try {
-            connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/hotel", "postgres", "0000");
+        try (Connection connection = DatabaseConfig.getConnection()) {
             GuestService guestService = new GuestService(new GuestRepositoryImpl(connection));
             RoomService roomService = new RoomService(new RoomRepositoryImpl(connection));
-//            ReservationService reservationService = new ReservationService(new ReservationRepositoryImpl(connection));
+            ReservationService reservationService = new ReservationService(new ReservationRepositoryImpl(connection));
 
             Scanner scanner = new Scanner(System.in);
 
             GuestController guestController = new GuestController(guestService, scanner);
             RoomController roomController = new RoomController(roomService, scanner);
-//            ReservationController reservationController = new ReservationController(reservationService, guestService, roomService, scanner);
+            ReservationController reservationController = new ReservationController(reservationService, guestService, roomService, scanner);
 
             while (true) {
                 System.out.println("\n1. Управление гостями");
@@ -39,32 +37,16 @@ public class HotelApplication {
                 int choice = getIntInput(scanner);
 
                 switch (choice) {
-                    case 1:
-                        guestMenu(guestController);
-                        break;
-
-                    case 2:
-                        roomMenu(roomController);
-                        break;
-
-                    case 3:
-//                        reservationMenu(reservationController);
-                        break;
-
-                    case 0:
+                    case 1 -> guestMenu(guestController);
+                    case 2 -> roomMenu(roomController);
+                    case 3 -> reservationMenu(reservationController);
+                    case 0 -> {
                         return; // Выйти из приложения
+                    }
                 }
             }
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            if (connection != null) {
-                try {
-                    connection.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
         }
     }
 
