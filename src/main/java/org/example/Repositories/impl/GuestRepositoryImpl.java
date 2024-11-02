@@ -1,14 +1,14 @@
 package org.example.Repositories.impl;
 
 import org.example.Models.Guest;
-import org.example.Repositories.api.GuestRepositoryAPI;
+import org.example.Repositories.api.GuestRepositoryApi;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class GuestRepositoryImpl implements GuestRepositoryAPI {
+public class GuestRepositoryImpl implements GuestRepositoryApi {
     private final Connection connection;
 
     public GuestRepositoryImpl(Connection connection) {

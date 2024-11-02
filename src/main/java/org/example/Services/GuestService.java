@@ -1,16 +1,15 @@
 package org.example.Services;
 
 import org.example.Models.Guest;
-import org.example.Repositories.api.GuestRepositoryAPI;
-import org.example.Repositories.api.Repository;
+import org.example.Repositories.api.GuestRepositoryApi;
 
 import java.util.List;
 import java.util.Optional;
 
 public class GuestService {
-    private GuestRepositoryAPI guestRepository;
+    private GuestRepositoryApi guestRepository;
 
-    public GuestService(GuestRepositoryAPI guestRepository) {
+    public GuestService(GuestRepositoryApi guestRepository) {
         this.guestRepository = guestRepository;
     }
 
