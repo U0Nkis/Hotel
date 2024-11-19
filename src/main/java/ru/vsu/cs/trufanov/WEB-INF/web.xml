@@ -22,6 +22,16 @@
 
     <servlet-mapping>
         <servlet-name>RoomServlet</servlet-name>
-        <url-pattern>/room/*</url-pattern>
+        <url-pattern>/rooms/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ReservationServlet</servlet-name>
+        <servlet-class>ru.vsu.cs.trufanov.Servlets.ReservationServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ReservationServlet</servlet-name>
+        <url-pattern>/reservations/*</url-pattern>
     </servlet-mapping>
 </web-app>
