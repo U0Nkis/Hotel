@@ -1,0 +1,27 @@
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+         version="5.0">
+
+    <display-name>Hotel Application</display-name>
+
+    <servlet>
+        <servlet-name>GuestServlet</servlet-name>
+        <servlet-class>ru.vsu.cs.trufanov.Servlets.GuestServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>GuestServlet</servlet-name>
+        <url-pattern>/guests/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>RoomServlet</servlet-name>
+        <servlet-class>ru.vsu.cs.trufanov.Servlets.RoomServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>RoomServlet</servlet-name>
+        <url-pattern>/room/*</url-pattern>
+    </servlet-mapping>
+</web-app>
